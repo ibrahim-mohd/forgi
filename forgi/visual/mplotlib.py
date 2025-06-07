@@ -578,7 +578,7 @@ def plot_rna_custom(cg, color_array,ax=None, offset=(0, 0), text_kwargs={}, back
                 print(l)
             c=colorsys.hls_to_rgb(h,l,s)
             circle = plt.Circle((coord[0], coord[1]),
-                            color=color_array[i])
+                            color=color_array[i], edgecolor="black")
         else:
             circle = plt.Circle((coord[0], coord[1]),
                                 edgecolor="black", facecolor="white")
