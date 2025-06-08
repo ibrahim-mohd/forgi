@@ -557,7 +557,7 @@ def plot_rna_custom(cg, color_array,ax=None, offset=(0, 0), text_kwargs={}, back
     if basepairs:
         basepairs = np.array(basepairs)
         if color:
-            c = "red"
+            c = "black" # modified
         else:
             c = "black"
             # Do not allow changing color through basepair_kwargs if color is set to False
@@ -578,7 +578,7 @@ def plot_rna_custom(cg, color_array,ax=None, offset=(0, 0), text_kwargs={}, back
                 print(l)
             c=colorsys.hls_to_rgb(h,l,s)
             circle = plt.Circle((coord[0], coord[1]),
-                            color=color_array[i], edgecolor="black")
+                            facecolor=color_array[i], edgecolor="black",linewidth=2)
         else:
             circle = plt.Circle((coord[0], coord[1]),
                                 edgecolor="black", facecolor="white")
