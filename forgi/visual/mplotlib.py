@@ -473,7 +473,7 @@ def plot_pdb(filename, ax=None):
     return ax
 
 
-def plot_rna_custom(cg, color_array,linewidth=2,ax=None, offset=(0, 0), text_kwargs={}, backbone_kwargs={},
+def plot_rna_custom(cg, color_array,linewidth=2,annotate_name=True, ax=None, offset=(0, 0), text_kwargs={}, backbone_kwargs={},
              basepair_kwargs={}, color=True, lighten=0, annotations={}):
     '''
     Plot an RNA structure given a set of nucleotide coordinates
@@ -584,7 +584,7 @@ def plot_rna_custom(cg, color_array,linewidth=2,ax=None, offset=(0, 0), text_kwa
                                 edgecolor="black", facecolor="white")
 
         ax.add_artist(circle)
-        if cg.seq:
+        if cg.seq and annotate_name:
             if "fontweight" not in text_kwargs:
                 text_kwargs["fontweight"]="bold"
             ax.annotate(cg.seq[i+1],xy=coord, ha="center", va="center", **text_kwargs )
