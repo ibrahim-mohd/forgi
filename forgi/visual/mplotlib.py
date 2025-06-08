@@ -473,7 +473,7 @@ def plot_pdb(filename, ax=None):
     return ax
 
 
-def plot_rna_custom(cg, color_array,ax=None, offset=(0, 0), text_kwargs={}, backbone_kwargs={},
+def plot_rna_custom(cg, color_array,linewidth=2,ax=None, offset=(0, 0), text_kwargs={}, backbone_kwargs={},
              basepair_kwargs={}, color=True, lighten=0, annotations={}):
     '''
     Plot an RNA structure given a set of nucleotide coordinates
@@ -578,7 +578,7 @@ def plot_rna_custom(cg, color_array,ax=None, offset=(0, 0), text_kwargs={}, back
                 print(l)
             c=colorsys.hls_to_rgb(h,l,s)
             circle = plt.Circle((coord[0], coord[1]),
-                            facecolor=color_array[i], edgecolor="black",linewidth=2)
+                            facecolor=color_array[i], edgecolor="black",linewidth=linewidth)
         else:
             circle = plt.Circle((coord[0], coord[1]),
                                 edgecolor="black", facecolor="white")
